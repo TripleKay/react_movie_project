@@ -14,13 +14,13 @@ const MovieBox = ({movie}) => {
                   color="dark"
                   pill={true}
                 >
-                  Watch
+                  View
                 </Button>
             </Card>
           </Link>
     </div>
     </div>
-
+ 
   )
 }
 

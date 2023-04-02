@@ -10,7 +10,7 @@ const Movie = () => {
 
       <div className='grid grid-cols-4 gap-3'>
           {
-            data.length > 0 ? data.map(item=> <MovieBox key={item.key} movie={item} />) : <h1>loading.....{data.length}</h1>
+            data.length > 0 ? data.map(item=> <MovieBox key={item.id} movie={item} />) : <h1>loading.....{data.length}</h1>
             }        
       </div>
     </div>
