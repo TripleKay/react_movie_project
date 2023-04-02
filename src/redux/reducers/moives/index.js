@@ -1,8 +1,8 @@
 import { ActionTypes } from "../../actions/action-types";
 
 const initialState = {
-   moives: [],
-   moive: {},
+   movies: [],
+   movie: {},
 };
 
 export const movieReducer = (state = initialState, { type, playload }) => {

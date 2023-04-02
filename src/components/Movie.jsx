@@ -1,26 +1,17 @@
 import React from 'react'
-import { Card } from 'flowbite-react';
-import { Button } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import MovieBox from './MovieBox';
 const Movie = () => {
+
+  const data = useSelector(state => state.movies.movies);
+  console.log("moviesData",data);
   return (
     <div className="container mx-auto mt-3">
+
       <div className='grid grid-cols-4 gap-3'>
-        <div className="max-w-sm">
-          <Link to='/movies/3'>
-            <Card imgSrc="https://flowbite.com/docs/images/blog/image-1.jpg">
-                <h4 className='text-start text-xl'>Avator : The Way of Water 2022</h4>
-                <span className='text-start text-slate-700'>Action , Fantasty</span>
-                <Button
-                  color="dark"
-                  pill={true}
-                >
-                  Watch
-                </Button>
-            </Card>
-          </Link>
-        </div>
-        
+          {
+            data.length > 0 ? data.map(item=> <MovieBox key={item.key} movie={item} />) : <h1>loading.....{data.length}</h1>
+            }        
       </div>
     </div>
   )
